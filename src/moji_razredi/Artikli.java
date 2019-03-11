@@ -21,4 +21,11 @@ public class Artikli {
     public void setSeznamArtiklov(List<Artikel> seznamArtiklov) {
         this.seznamArtiklov = seznamArtiklov;
     }
+
+    @Override
+    public String toString() {
+        return "Artikli{" +
+                "seznamArtiklov=" + seznamArtiklov +
+                '}';
+    }
 }
