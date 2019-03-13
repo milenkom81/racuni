@@ -1,22 +1,27 @@
 package moji_razredi;
 
 import java.lang.Object;
+import java.util.Date;
+
 
 public class Racun
 {
-    Artikli SeznamRacun;
+    private Artikli SeznamRacun;
     private int id;
     private double SkupnaCena;
+    private Date Datum;
 
 
-
-    public Racun(Artikli seznamracun, int id) {
+    public Racun(Artikli seznamracun, int id, Date datum) {
+        this.Datum = datum;
         this.id = id;
         this.SeznamRacun = seznamracun;
         this.SkupnaCena = 0;
         for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
             this.SkupnaCena += (SeznamRacun.getSeznamArtiklov().get(i).getCena() * SeznamRacun.getSeznamArtiklov().get(i).getKolicina() * SeznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()) ;
         }
+
+        this.SkupnaCena = Math.round(SkupnaCena * 100.0) / 100.0;
     }
 
     public Artikli getSeznamRacun() {
@@ -43,6 +48,7 @@ public class Racun
         for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
             this.SkupnaCena += (SeznamRacun.getSeznamArtiklov().get(i).getCena() * SeznamRacun.getSeznamArtiklov().get(i).getKolicina() * SeznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()) ;
         }
+        this.SkupnaCena = Math.round(SkupnaCena * 100.0) / 100.0;
     }
 
     @Override
@@ -55,6 +61,8 @@ public class Racun
         return "Racun: \n" + buf +
                 " id=" + id +
                 "\n SkupnaCena=" + SkupnaCena +
+
+                "\n Datum=" + Datum +
 
                 '}';
     }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Artikli {
 
-    List<Artikel> seznamArtiklov;
+    private List<Artikel> seznamArtiklov;
 
     public Artikli() {
         this.seznamArtiklov = new ArrayList<>();

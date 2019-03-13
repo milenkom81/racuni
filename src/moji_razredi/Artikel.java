@@ -5,10 +5,10 @@ public class Artikel {
     private String ime;
     private double cena;
     private double davcnaStopnja;
-    private int ean;
+    private String ean;
 
 
-    public Artikel(String ime, double cena, double davcnaStopnja, int kolicina, int ean) {
+    public Artikel(String ime, double cena, double davcnaStopnja, int kolicina, String ean) {
         this.ime = ime;
         this.cena = cena;
         this.davcnaStopnja = davcnaStopnja;
@@ -48,11 +48,11 @@ public class Artikel {
         this.kolicina = kolicina;
     }
 
-    public int getEan() {
+    public String getEan() {
         return ean;
     }
 
-    public void setEan(int ean) {
+    public void setEan(String ean) {
         this.ean = ean;
     }
 
