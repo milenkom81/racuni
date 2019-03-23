@@ -1,26 +1,30 @@
-Vaje 2018/2019
-26. februar 2019
-
-1 Vodenje računov
-Napišite vse potrebne razrede, pripadajoče metode, ki omogočajo posamezno
-funkcionalnost.
-Ne pozabite da omogočite: dodajanje, brisanje in popravljanje.
-1.1 Vaja 1
-Cilj prve vaje je podpreti vnos posameznega računa. Ker so na računu različne postavke (artikli, storitve) moramo imeti tudi seznam le-teh. V tej vaji še ne bomo shranjevali ali brali podatkov iz diska. Izdelajte predstavitev v pomnilniku, ki bo vsebovala minimalno število razredov:
-
-Artikel (ime, cena).
-Artikli (vsebuje seznam vseh artiklov).
-Račun (id, datum, seznam artiklov z njihovo ceno in količino).
-
-Razmislite, kako bi implementirali skupni znesek računa. Smiselno uporabite določila private, protected, public.
-Ali za znesek uporabiti int ali double?
-Kaj je ID? Kako ga implementirati?
-Kaj je EAN koda? Ali je primerna za primarni ključ? Vaša aplikacija naj podpira EAN kodo (dopolnite).
-Poiščite in slikajte vsaj dva računa različnih izdajateljev.
-1.2 Vaja 2
-Prilagodi razred račun tako, da bo v skladu z izbranim računom.
-
-Artiklom dodajte lastnost, davčna stopnja (na spletu preverite katere veljajo v Sloveniji).
-Vodite seznam računov.
-
-Ali je smiselno uvesti časovno značko na nivoju artikla na računu?
+1.3 Vaja 2.1
+Za vajo imate ˇcas dva tedna. Ce vajo zagovorite prvi teden (18.3.2019 - 22.3.2019), ˇ
+lahko dobit vse pike. Ce zagovarjate po 22.3.2019 se vaji odbije ena pika. Enako ˇ
+velja za neobvezne naloge.
+Objavite vso vaˇso kodo na poljuben repozitorij (primer za GitHub). Po
+potrebi dopolnite razred Raˇcun, da bo vseboval:
+• izdajatelj,
+• datum,
+• (unikatna) ˇstevilka raˇcuna in
+• davˇcna ˇstevilka podjetja (ID ˇstevilka za DDV).
+Po zgledu pripravite razred Podjetje, ki ima vsaj:
+• ime,
+• davˇcna ˇstevilka,
+• matiˇcna ˇstevilka in
+• je davˇcni zavezanec.
+Ustvarite vmesnik (interface) Searchable, ki ima metodo search. Metoda
+prejme String in vrne boolean. Razredi Artikel, Podjetje in Raˇcun naj implementirajo vmesnik Searchable. Metoda search vrne true, ˇce objekt vsebuje
+podan String v katerikoli instanˇcni spremenljivki.
+Ustvarite objekte po zgledu vaˇsih izbranih raˇcunov in treh poljubnih podjetij.
+Vsi objekti se naj kreirajo ob zagonu aplikacije (hard-coded). Ustvarite vsaj
+en original raˇcun (ima davˇcno ˇstevilko podjetja). Na raˇcunu preverite ali je
+podjetje davˇcni zavezanec.
+1.4 Vaja 2.2
+Razredu Artikel dodajte statiˇcno metodo checkDigit, ki prejme ˇcrtno kodo
+vkljuˇcno s kontrolna ˇstevilko (check digit) in vrne boolean. Metoda naj preveri ali je ˇcrtna koda veljavna (izraˇcun). Pri testiranju si lahko pomagate s
+kalkulatorjem. Povozite metodo toString(), tako da bo izpis ˇcim bolj podoben
+vaˇsem izbranem raˇcunu.
+1.5 Vaja 2.3 (neobvezna)
+Razredu Artikel dodajte ˇse drˇzavo. Pri dodajanju artikla “izluˇsˇcite” drˇzavo iz
+ˇcrtne kode. Ali imajo vse ˇcrtne kode drˇzavo?

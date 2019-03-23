@@ -6,13 +6,18 @@ import java.util.Date;
 
 public class Racun
 {
+
+
     private Artikli SeznamRacun;
     private int id;
     private BigDecimal SkupnaCena;
     private Date Datum;
+    private String Izdajatelj;
+    private String DavcnaStevilka;
 
-
-    public Racun(Artikli seznamracun, int id, Date datum) {
+    public Racun(Artikli seznamracun, int id, Date datum, String davcnaStevilka, String izdajatelj) {
+        this.Izdajatelj = izdajatelj;
+        this.DavcnaStevilka = davcnaStevilka;
         this.Datum = datum;
         this.id = id;
         this.SeznamRacun = seznamracun;
@@ -20,7 +25,6 @@ public class Racun
         for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
             this.SkupnaCena = this.SkupnaCena.add(SeznamRacun.getSeznamArtiklov().get(i).getSkupnaCena());
         }
-
 
     }
 
@@ -48,6 +52,30 @@ public class Racun
         for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
             this.SkupnaCena.add(SeznamRacun.getSeznamArtiklov().get(i).getSkupnaCena().multiply(SeznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()));
         }
+    }
+
+    public String getIzdajatelj() {
+        return Izdajatelj;
+    }
+
+    public void setIzdajatelj(String izdajatelj) {
+        Izdajatelj = izdajatelj;
+    }
+
+    public Date getDatum() {
+        return Datum;
+    }
+
+    public void setDatum(Date datum) {
+        Datum = datum;
+    }
+
+    public String getDavcnaStevilka() {
+        return DavcnaStevilka;
+    }
+
+    public void setDavcnaStevilka(String davcnaStevilka) {
+        DavcnaStevilka = davcnaStevilka;
     }
 
     @Override

@@ -18,7 +18,7 @@ public class Main {
         seznam1.getSeznamArtiklov().add(voda);
 
         Date trenutno = new Date();
-        Racun skupaj = new Racun(seznam1,1,trenutno);
+        Racun skupaj = new Racun(seznam1,1,trenutno, "12131", "wfwfw");
 
         System.out.println(skupaj.toString());
 
