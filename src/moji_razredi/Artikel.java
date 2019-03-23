@@ -1,26 +1,38 @@
 package moji_razredi;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 public class Artikel {
     private int kolicina;
     private String ime;
-    private double cena;
-    private double davcnaStopnja;
+    private BigDecimal cena;
+    private BigDecimal davcnaStopnja;
     private String ean;
+    private BigDecimal skupnaCena;
 
 
-    public Artikel(String ime, double cena, double davcnaStopnja, int kolicina, String ean) {
+    public BigDecimal getSkupnaCena() {
+        return skupnaCena;
+    }
+
+    public void setSkupnaCena(BigDecimal skupnaCena) {
+        this.skupnaCena = skupnaCena;
+    }
+
+    public Artikel(String ime, BigDecimal cena, BigDecimal davcnaStopnja, int kolicina, String ean) {
         this.ime = ime;
         this.cena = cena;
         this.davcnaStopnja = davcnaStopnja;
         this.kolicina = kolicina;
         this.ean = ean;
+        this.skupnaCena = BigDecimal.valueOf(kolicina).multiply(cena);
     }
 
-    public double getDavcnaStopnja() {
+    public BigDecimal getDavcnaStopnja() {
         return davcnaStopnja;
     }
 
-    public void setDavcnaStopnja(double davcnaStopnja) {
+    public void setDavcnaStopnja(BigDecimal davcnaStopnja) {
         this.davcnaStopnja = davcnaStopnja;
     }
 
@@ -32,11 +44,13 @@ public class Artikel {
         this.ime = ime;
     }
 
-    public double getCena() {
+    public BigDecimal getCena() {
         return cena;
     }
 
-    public void setCena(double cena) {
+
+
+    public void setCena(BigDecimal cena) {
         this.cena = cena;
     }
 

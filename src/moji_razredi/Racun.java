@@ -1,5 +1,5 @@
 package moji_razredi;
-
+import java.math.BigDecimal;
 import java.lang.Object;
 import java.util.Date;
 
@@ -8,7 +8,7 @@ public class Racun
 {
     private Artikli SeznamRacun;
     private int id;
-    private double SkupnaCena;
+    private BigDecimal SkupnaCena;
     private Date Datum;
 
 
@@ -16,12 +16,12 @@ public class Racun
         this.Datum = datum;
         this.id = id;
         this.SeznamRacun = seznamracun;
-        this.SkupnaCena = 0;
+        this.SkupnaCena = new BigDecimal(0);
         for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
-            this.SkupnaCena += (SeznamRacun.getSeznamArtiklov().get(i).getCena() * SeznamRacun.getSeznamArtiklov().get(i).getKolicina() * SeznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()) ;
+            this.SkupnaCena = this.SkupnaCena.add(SeznamRacun.getSeznamArtiklov().get(i).getSkupnaCena());
         }
 
-        this.SkupnaCena = Math.round(SkupnaCena * 100.0) / 100.0;
+
     }
 
     public Artikli getSeznamRacun() {
@@ -40,15 +40,14 @@ public class Racun
         this.id = id;
     }
 
-    public double getSkupnaCena() {
+    public BigDecimal getSkupnaCena() {
         return SkupnaCena;
     }
 
-    public void setSkupnaCena(double skupnaCena) {
+    public void setSkupnaCena(BigDecimal skupnaCena) {
         for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
-            this.SkupnaCena += (SeznamRacun.getSeznamArtiklov().get(i).getCena() * SeznamRacun.getSeznamArtiklov().get(i).getKolicina() * SeznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()) ;
+            this.SkupnaCena.add(SeznamRacun.getSeznamArtiklov().get(i).getSkupnaCena().multiply(SeznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()));
         }
-        this.SkupnaCena = Math.round(SkupnaCena * 100.0) / 100.0;
     }
 
     @Override
