@@ -2,14 +2,23 @@ package moji_razredi;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class Artikel {
+public class Artikel implements Searchable {
     private int kolicina;
     private String ime;
     private BigDecimal cena;
     private BigDecimal davcnaStopnja;
     private String ean;
-    private BigDecimal skupnaCena;
 
+    public BigDecimal getSkupniDDV() {
+        return skupniDDV;
+    }
+
+    public void setSkupniDDV(BigDecimal skupniDDV) {
+        this.skupniDDV = skupniDDV;
+    }
+
+    private BigDecimal skupnaCena;
+    private BigDecimal skupniDDV;
 
     public BigDecimal getSkupnaCena() {
         return skupnaCena;
@@ -25,7 +34,8 @@ public class Artikel {
         this.davcnaStopnja = davcnaStopnja;
         this.kolicina = kolicina;
         this.ean = ean;
-        this.skupnaCena = BigDecimal.valueOf(kolicina).multiply(cena);
+        this.skupnaCena = BigDecimal.valueOf(kolicina).multiply(cena.multiply(davcnaStopnja));
+        this.skupniDDV = BigDecimal.valueOf(kolicina).multiply(cena.multiply(davcnaStopnja.divide(new BigDecimal(10))));
     }
 
     public BigDecimal getDavcnaStopnja() {
@@ -47,7 +57,6 @@ public class Artikel {
     public BigDecimal getCena() {
         return cena;
     }
-
 
 
     public void setCena(BigDecimal cena) {
@@ -77,7 +86,51 @@ public class Artikel {
                 ", ime='" + ime + '\'' +
                 ", cena=" + cena +
                 ", davcnaStopnja=" + davcnaStopnja +
-                ", ean=" + ean +
+                ", ean='" + ean + '\'' +
+                ", skupnaCena=" + skupnaCena +
                 '}';
     }
+    public boolean search(String niz) {
+        int isExists = this.toString().indexOf(niz);
+        if (isExists >= 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public static boolean checkDigit(String preveri) {
+        int intArray[] = new int[preveri.length()];
+        int vsota = 0;
+        for (int i = 0; i < preveri.length(); i++) {
+            intArray[i] = Character.digit(preveri.charAt(i), 10);
+            if(i % 2 == 1){
+                intArray[i] = 3 * intArray[i];
+            }
+            if(i != preveri.length() -1) {
+                vsota = vsota + intArray[i];
+            }
+        }
+        int zaokrozeno = vsota;
+        int zadnastevilka = intArray[preveri.length()-1];
+        if(vsota % 10 != 0){
+            int a = vsota % 10;
+            int ab =  10 - a;
+            zaokrozeno = vsota +ab;
+
+        }
+
+        if(zadnastevilka == zaokrozeno - vsota) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+
+
+
 }

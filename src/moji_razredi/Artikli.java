@@ -6,7 +6,7 @@ import java.util.List;
 
 
 
-public class Artikli {
+public class Artikli implements Searchable{
 
     private List<Artikel> seznamArtiklov;
 
@@ -28,4 +28,16 @@ public class Artikli {
                 "seznamArtiklov=" + seznamArtiklov +
                 '}';
     }
+
+    public boolean search(String niz) {
+        int isExists = this.toString().indexOf(niz);
+        if (isExists >= 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
 }

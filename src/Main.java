@@ -1,5 +1,6 @@
 import moji_razredi.Artikel;
 import moji_razredi.Artikli;
+import moji_razredi.Podjetje;
 import moji_razredi.Racun;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,8 +18,13 @@ public class Main {
         seznam1.getSeznamArtiklov().add(pivo);
         seznam1.getSeznamArtiklov().add(voda);
 
+        Podjetje sava = new Podjetje("HENKEL MARIBOR d.o.o.", true,"58665765","6261752000","Industrijska ulica 23, Maribor, 2000 Maribor");
+
+
         Date trenutno = new Date();
-        Racun skupaj = new Racun(seznam1,1,trenutno, "12131", "wfwfw");
+        Racun skupaj = new Racun(seznam1,1,trenutno, "Janez novak", false,sava);
+
+        boolean test = pivo.checkDigit("1291041500287");
 
         System.out.println(skupaj.toString());
 
