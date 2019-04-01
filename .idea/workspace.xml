@@ -2,21 +2,17 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/moji_razredi/Artikli.java" line="15" />
-    <bookmark url="file://$PROJECT_DIR$/src/moji_razredi/Artikel.java" line="131" />
+    <bookmark url="file://$PROJECT_DIR$/src/moji_razredi/Artikel.java" line="104" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="578a6d5e-cfd9-4958-9059-1e6a11861fb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/moji_razredi/Companies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/moji_razredi/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/moji_razredi/Invoices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/moji_razredi/JsonSupport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/vaje1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikli.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikli.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Helper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/moji_razredi/Artikli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moji_razredi/Artikli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vaje1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/vaje1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moji_razredi/Artikel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moji_razredi/Artikel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moji_razredi/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/moji_razredi/Helper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,15 +35,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/moji_razredi/Searchable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
@@ -57,10 +44,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/moji_razredi/Companies.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="35" column="16" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="16" />
+            <state>
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#165#166#0" expanded="true" />
@@ -75,56 +71,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moji_razredi/Helper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moji_razredi/Invoices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#154#155#0" expanded="true" />
-                <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#260#261#0" expanded="true" />
-                <element signature="e#296#297#0" expanded="true" />
-                <element signature="e#359#360#0" expanded="true" />
-                <element signature="e#409#410#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moji_razredi/Racun.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1311#1312#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/moji_razredi/Artikel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="102" column="10" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="10" />
+            <state relative-caret-position="374">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#305#306#0" expanded="true" />
@@ -139,13 +89,44 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            <state relative-caret-position="246">
+              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moji_razredi/JsonSupport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moji_razredi/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aa.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -174,7 +155,6 @@
         <option value="$PROJECT_DIR$/navodila.txt" />
         <option value="$PROJECT_DIR$/src/moji_razredi/SeznamRacunov.java" />
         <option value="$PROJECT_DIR$/src/moji_razredi/Searchable.java" />
-        <option value="$PROJECT_DIR$/src/moji_razredi/Artikel.java" />
         <option value="$PROJECT_DIR$/src/moji_razredi/Podjetje.java" />
         <option value="$PROJECT_DIR$/src/moji_razredi/Racun.java" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -182,16 +162,18 @@
         <option value="$PROJECT_DIR$/src/moji_razredi/Artikli.java" />
         <option value="$PROJECT_DIR$/src/moji_razredi/Companies.java" />
         <option value="$PROJECT_DIR$/src/moji_razredi/Invoices.java" />
+        <option value="$PROJECT_DIR$/src/moji_razredi/Artikel.java" />
+        <option value="$PROJECT_DIR$/src/moji_razredi/Response.java" />
         <option value="$PROJECT_DIR$/src/moji_razredi/Helper.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="359" />
-    <option name="y" value="27" />
-    <option name="width" value="940" />
-    <option name="height" value="767" />
+    <option name="x" value="63" />
+    <option name="y" value="25" />
+    <option name="width" value="809" />
+    <option name="height" value="1025" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -299,8 +281,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49873418" weight="0.2675086" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46268657" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49873418" weight="0.29276693" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.347876" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295063" />
@@ -353,9 +335,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>36</line>
+          <line>39</line>
           <properties />
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -388,18 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moji_razredi/Racun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/moji_razredi/Artikli.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
@@ -409,6 +379,9 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vaje1.iml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moji_razredi/Invoices.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -426,17 +399,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moji_razredi/JsonSupport.java">
+    <entry file="file://$PROJECT_DIR$/src/moji_razredi/Racun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="141">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1352#1353#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vaje1.iml">
+    <entry file="file://$PROJECT_DIR$/bb.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moji_razredi/Searchable.java">
@@ -446,10 +421,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/moji_razredi/Companies.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="16" />
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#165#166#0" expanded="true" />
@@ -462,17 +444,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/moji_razredi/Artikel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="102" column="10" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="10" />
+        <state relative-caret-position="374">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#305#306#0" expanded="true" />
@@ -483,10 +458,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/moji_razredi/JsonSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moji_razredi/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="e#107#108#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/moji_razredi/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="342">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#257#258#0" expanded="true" />
@@ -495,10 +500,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aa.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aa.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="246">
+          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

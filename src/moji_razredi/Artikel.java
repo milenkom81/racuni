@@ -100,34 +100,7 @@ public class Artikel implements Searchable {
         }
     }
 
-    public static boolean checkDigit(String preveri) {
-        int intArray[] = new int[preveri.length()];
-        int vsota = 0;
-        for (int i = 0; i < preveri.length(); i++) {
-            intArray[i] = Character.digit(preveri.charAt(i), 10);
-            if(i % 2 == 1){
-                intArray[i] = 3 * intArray[i];
-            }
-            if(i != preveri.length() -1) {
-                vsota = vsota + intArray[i];
-            }
-        }
-        int zaokrozeno = vsota;
-        int zadnastevilka = intArray[preveri.length()-1];
-        if(vsota % 10 != 0){
-            int a = vsota % 10;
-            int ab =  10 - a;
-            zaokrozeno = vsota +ab;
 
-        }
-
-        if(zadnastevilka == zaokrozeno - vsota) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 
 
 
