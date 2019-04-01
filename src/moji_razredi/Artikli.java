@@ -1,12 +1,15 @@
 package moji_razredi;
 
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 
-public class Artikli implements Searchable{
+public class Artikli implements Searchable, JsonSupport{
 
     private List<Artikel> seznamArtiklov;
 
@@ -38,6 +41,20 @@ public class Artikli implements Searchable{
             return false;
         }
     }
+
+    public String toJSON(){
+        String json = new Gson().toJson(this);
+        return json;
+
+    }
+
+    public <T> T fromJSON(String json){
+        Gson gson = new Gson(); // Or use new GsonBuilder().create();
+        Artikli target2 = gson.fromJson(json, this.getClass()); // deserializes json into target2
+        return (T)target2;
+    }
+
+
 
 
 }

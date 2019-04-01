@@ -1,7 +1,5 @@
-import moji_razredi.Artikel;
-import moji_razredi.Artikli;
-import moji_razredi.Podjetje;
-import moji_razredi.Racun;
+import moji_razredi.*;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -30,13 +28,16 @@ public class Main {
         Date trenutno = new Date();
         Racun skupaj = new Racun(seznam1,1,trenutno, "Janez novak", false,Union);
 
+
+
+
+        System.out.println(seznam1.toJSON());
+        String aa = seznam1.toJSON();
+        Artikli testi = seznam1.fromJSON(aa);
         boolean test = pivo.checkDigit("1291041500287");
 
-
-        System.out.println(skupaj.toString());
-
-
-
+        Helper ja = new Helper("helper");
+        ja.pisanje(aa,"aa.txt");
 
     }
 }
