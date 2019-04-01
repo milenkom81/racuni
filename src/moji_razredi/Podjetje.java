@@ -1,68 +1,68 @@
 package moji_razredi;
 
 public class Podjetje implements Searchable {
-    private String Ime;
-    private Boolean DavcniZavezanec;
-    private String DavcnaStevilka;
-    private String MaticnaStevilka;
-    private String Naslov;
+    private String ime;
+    private Boolean davcniZavezanec;
+    private String davcnaStevilka;
+    private String maticnaStevilka;
+    private String naslov;
 
-    public Podjetje(String ime, Boolean davcniZavezanec, String davcnaStevilka, String maticnaStevilka, String naslov) {
-        Ime = ime;
-        DavcniZavezanec = davcniZavezanec;
-        DavcnaStevilka = davcnaStevilka;
-        MaticnaStevilka = maticnaStevilka;
-        Naslov = naslov;
+    public Podjetje(String Ime, Boolean DavcniZavezanec, String DavcnaStevilka, String MaticnaStevilka, String Naslov) {
+        ime = Ime;
+        davcniZavezanec = DavcniZavezanec;
+        davcnaStevilka = DavcnaStevilka;
+        maticnaStevilka = MaticnaStevilka;
+        naslov = Naslov;
     }
 
     public String getIme() {
-        return Ime;
+        return ime;
     }
 
-    public void setIme(String ime) {
-        Ime = ime;
+    public void setIme(String Ime) {
+        ime = Ime;
     }
 
     public Boolean getDavcniZavezanec() {
-        return DavcniZavezanec;
+        return davcniZavezanec;
     }
 
-    public void setDavcniZavezanec(Boolean davcniZavezanec) {
-        DavcniZavezanec = davcniZavezanec;
+    public void setDavcniZavezanec(Boolean DavcniZavezanec) {
+        davcniZavezanec = DavcniZavezanec;
     }
 
     public String getDavcnaStevilka() {
-        return DavcnaStevilka;
+        return davcnaStevilka;
     }
 
-    public void setDavcnaStevilka(String davcnaStevilka) {
-        DavcnaStevilka = davcnaStevilka;
+    public void setDavcnaStevilka(String DavcnaStevilka) {
+        davcnaStevilka = DavcnaStevilka;
     }
 
     public String getMaticnaStevilka() {
-        return MaticnaStevilka;
+        return maticnaStevilka;
     }
 
-    public void setMaticnaStevilka(String maticnaStevilka) {
-        MaticnaStevilka = maticnaStevilka;
+    public void setMaticnaStevilka(String MaticnaStevilka) {
+        maticnaStevilka = MaticnaStevilka;
     }
 
     public String getNaslov() {
-        return Naslov;
+        return naslov;
     }
 
-    public void setNaslov(String naslov) {
-        Naslov = naslov;
+    public void setNaslov(String Naslov) {
+        naslov = Naslov;
     }
 
     @Override
     public String toString() {
         return "Podjetje{" +
-                "Ime='" + Ime + '\'' +
-                ", DavcniZavezanec=" + DavcniZavezanec +
-                ", DavcnaStevilka='" + DavcnaStevilka + '\'' +
-                ", MaticnaStevilka='" + MaticnaStevilka + '\'' +
-                ", Naslov='" + Naslov + '\'' +
+                "Ime='" + ime + '\'' +
+                ", DavcniZavezanec=" + davcniZavezanec +
+                ", DavcnaStevilka='" + davcnaStevilka + '\'' +
+                ", MaticnaStevilka='" + maticnaStevilka + '\'' +
+                ", Naslov='" + naslov + '\'' +
                 '}';
     }
 

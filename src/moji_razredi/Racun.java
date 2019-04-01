@@ -6,41 +6,41 @@ import java.util.Date;
 
 public class Racun implements Searchable
 {
-    private Artikli SeznamRacun;
+    private Artikli seznamRacun;
     private int id;
-    private BigDecimal SkupnaCena;
-    private Date Datum;
-    private String Izdajatelj;
-    boolean Originalni;
-    private Podjetje PodjetjeRacun;
-    private BigDecimal SkupniDDV;
+    private BigDecimal skupnaCena;
+    private Date datum;
+    private String izdajatelj;
+    boolean originalni;
+    private Podjetje podjetjeRacun;
+    private BigDecimal skupniDDV;
 
 
-    public Racun(Artikli seznamracun, int id, Date datum, String izdajatelj,boolean originalni, Podjetje podjetjeracun) {
-        this.Originalni = originalni;
-        this.Izdajatelj = izdajatelj;
+    public Racun(Artikli seznamracun, int id, Date datum, String Izdajatelj,boolean Originalni, Podjetje Podjetjeracun) {
+        this.originalni = Originalni;
+        this.izdajatelj = Izdajatelj;
 
-        this.Datum = datum;
+        this.datum = datum;
         this.id = id;
-        this.SeznamRacun = seznamracun;
-        this.SkupnaCena = new BigDecimal(0);
-        this.SkupniDDV = new BigDecimal(0);
-        for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
-            this.SkupnaCena = this.SkupnaCena.add(SeznamRacun.getSeznamArtiklov().get(i).getSkupnaCena());
+        this.seznamRacun = seznamracun;
+        this.skupnaCena = new BigDecimal(0);
+        this.skupniDDV = new BigDecimal(0);
+        for(int i = 0; i<seznamRacun.getSeznamArtiklov().size(); i++){
+            this.skupnaCena = this.skupnaCena.add(seznamRacun.getSeznamArtiklov().get(i).getSkupnaCena());
         }
-        this.PodjetjeRacun = podjetjeracun;
-        for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
-            this.SkupniDDV = this.SkupniDDV.add(SeznamRacun.getSeznamArtiklov().get(i).getSkupniDDV());
+        this.podjetjeRacun = Podjetjeracun;
+        for(int i = 0; i<seznamRacun.getSeznamArtiklov().size(); i++){
+            this.skupniDDV = this.skupniDDV.add(seznamRacun.getSeznamArtiklov().get(i).getSkupniDDV());
         }
 
     }
 
     public Artikli getSeznamRacun() {
-        return SeznamRacun;
+        return seznamRacun;
     }
 
     public void setSeznamRacun(Artikli seznamRacun) {
-        SeznamRacun = seznamRacun;
+        seznamRacun = seznamRacun;
     }
 
     public int getId() {
@@ -52,61 +52,61 @@ public class Racun implements Searchable
     }
 
     public BigDecimal getSkupnaCena() {
-        return SkupnaCena;
+        return skupnaCena;
     }
 
-    public void setSkupnaCena(BigDecimal skupnaCena) {
-        for(int i = 0; i<SeznamRacun.getSeznamArtiklov().size(); i++){
-            this.SkupnaCena.add(SeznamRacun.getSeznamArtiklov().get(i).getSkupnaCena().multiply(SeznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()));
+    public void setSkupnaCena() {
+        for(int i = 0; i<seznamRacun.getSeznamArtiklov().size(); i++){
+            this.skupnaCena.add(seznamRacun.getSeznamArtiklov().get(i).getSkupnaCena().multiply(seznamRacun.getSeznamArtiklov().get(i).getDavcnaStopnja()));
         }
     }
 
     public String getIzdajatelj() {
-        return Izdajatelj;
+        return izdajatelj;
     }
 
-    public void setIzdajatelj(String izdajatelj) {
-        Izdajatelj = izdajatelj;
+    public void setIzdajatelj(String Izdajatelj) {
+        izdajatelj = Izdajatelj;
     }
 
     public Date getDatum() {
-        return Datum;
+        return datum;
     }
 
-    public void setDatum(Date datum) {
-        Datum = datum;
+    public void setDatum(Date Datum) {
+        datum = Datum;
     }
 
 
     public boolean isOriginalni() {
-        return Originalni;
+        return originalni;
     }
 
-    public void setOriginalni(boolean originalni) {
-        Originalni = originalni;
+    public void setOriginalni(boolean Originalni) {
+        originalni = Originalni;
     }
 
     public Podjetje getPodjetjeRacun() {
-        return PodjetjeRacun;
+        return podjetjeRacun;
     }
 
-    public void setPodjetjeRacun(Podjetje podjetjeRacun) {
-        PodjetjeRacun = podjetjeRacun;
+    public void setPodjetjeRacun(Podjetje PodjetjeRacun) {
+        podjetjeRacun = PodjetjeRacun;
     }
 
     @Override
     public String toString() {
-        return  this.getPodjetjeRacun().getIme() + "\n" +
+        return this.getPodjetjeRacun().getIme() + "\n" +
                 this.getPodjetjeRacun().getNaslov() + "\n" +
                 this.getPodjetjeRacun().getDavcnaStevilka() + "\n" +
                 "RACUN \n" +
-                Datum + "\n" +
+                datum + "\n" +
 
-                "SeznamRacun=" + SeznamRacun + "\n" +
-                "ddv=" + SkupniDDV + "\n" +
-                "Skupaj z ddv=" + SkupnaCena + "\n" +
+                "SeznamRacun=" + seznamRacun + "\n" +
+                "ddv=" + skupniDDV + "\n" +
+                "Skupaj z ddv=" + skupnaCena + "\n" +
                 "id=" + id + "\n" +
-                "Blagajnik='" + Izdajatelj + '\''
+                "Blagajnik='" + izdajatelj + '\''
 
                 ;
     }
