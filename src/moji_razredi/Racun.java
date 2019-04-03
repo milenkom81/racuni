@@ -14,7 +14,7 @@ public class Racun implements Searchable
     boolean originalni;
     private Podjetje podjetjeRacun;
     private BigDecimal skupniDDV;
-
+    private Kupon popust;
 
     public Racun(Artikli seznamracun, int id, Date datum, String Izdajatelj,boolean Originalni, Podjetje Podjetjeracun) {
         this.originalni = Originalni;
@@ -103,7 +103,9 @@ public class Racun implements Searchable
         for (int i = 0; i < this.seznamRacun.getSeznamArtiklov().size(); i++) {
             skupajVse += this.seznamRacun.getSeznamArtiklov().get(i).toString();
         }
-
+        if(popust != null) {
+            skupajVse += "\nKUPON:  " + this.popust.getProcent() + "%";
+        }
         return this.getPodjetjeRacun().getIme() + "\n" +
                 this.getPodjetjeRacun().getNaslov() + "\n" +
                 this.getPodjetjeRacun().getDavcnaStevilka() + "\n" +
@@ -128,4 +130,36 @@ public class Racun implements Searchable
             return false;
         }
     }
+
+    public Kupon getPopust() {
+        return popust;
+    }
+
+    public void setPopust(Kupon popust) {
+        this.popust = popust;
+    }
+
+    public void kupon() {
+        if (this.popust != null){
+            String koda = popust.getEanKupon();
+            String year = koda.substring(1,4);
+            String month = koda.substring(4,6);
+            String date = koda.substring(6,8);
+            String procenti = koda.substring(8,10);
+
+
+
+            Date rok = new Date(Integer.parseInt(year)  ,Integer.parseInt(month),Integer.parseInt(date));
+            System.out.println(rok);
+
+            if (new Date().after(rok)){
+                System.out.println("kupon ni več veljaven");
+                return;
+            }
+
+            this.skupnaCena = this.skupnaCena.multiply(new BigDecimal(procenti)).divide(new BigDecimal("100"));
+            this.skupniDDV = this.skupniDDV.multiply(new BigDecimal(procenti)).divide(new BigDecimal("100"));
+        }
+    }
+
 }

@@ -6,9 +6,6 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 
 
-
-
-
 public class Artikel implements Searchable {
     private int kolicina;
     private String ime;
@@ -162,6 +159,7 @@ public class Artikel implements Searchable {
         return false;
 
     }
+
 
 
 

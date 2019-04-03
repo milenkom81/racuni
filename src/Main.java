@@ -1,5 +1,4 @@
 import moji_razredi.*;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -50,6 +49,12 @@ public class Main {
 //        boolean test = ja.checkDigit("1291041500287");
 //
 
+        Kupon deset = new Kupon("9120050550");
+        System.out.println(skupaj.toString());
+
+        skupaj.setPopust(deset);
+
+        skupaj.kupon();
 
         System.out.println(skupaj.toString());
     }
