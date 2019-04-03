@@ -1,6 +1,13 @@
 package moji_razredi;
+
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
+
+
+
+
 
 public class Artikel implements Searchable {
     private int kolicina;
@@ -8,6 +15,30 @@ public class Artikel implements Searchable {
     private BigDecimal cena;
     private BigDecimal davcnaStopnja;
     private String ean;
+    private boolean internaKoda;
+    private BigDecimal teza;
+
+    public BigDecimal getTeza() {
+        return teza;
+    }
+
+    public void setTeza(BigDecimal teza) {
+        this.teza = teza.divide(new BigDecimal(1000));
+        String stringTeza = teza.toString();
+        this.setEan(ean.substring(0,6)+stringTeza+ean.substring(11));
+
+        this.skupnaCena = teza.divide(new BigDecimal(1000)).multiply(cena).multiply(davcnaStopnja).setScale(2, RoundingMode.CEILING);
+    }
+
+    String[][] oddelki = new String[][]{
+            { "211", "Sadje"},
+            { "212", "Zelenjava"},
+            { "213", "Kruh"},
+            { "214", "Meso"}
+
+    };
+
+
 
     public BigDecimal getSkupniDDV() {
         return skupniDDV;
@@ -34,8 +65,17 @@ public class Artikel implements Searchable {
         this.davcnaStopnja = davcnaStopnja;
         this.kolicina = kolicina;
         this.ean = ean;
-        this.skupnaCena = BigDecimal.valueOf(kolicina).multiply(cena.multiply(davcnaStopnja));
-        this.skupniDDV = BigDecimal.valueOf(kolicina).multiply(cena.multiply(davcnaStopnja.divide(new BigDecimal(10))));
+        this.skupnaCena = BigDecimal.valueOf(kolicina).multiply(cena.multiply(davcnaStopnja)).setScale(2, RoundingMode.CEILING);;
+
+        if(this.preveriInterni()){
+            teza = new BigDecimal(this.getEan().substring(7,11)).divide(new BigDecimal(1000));
+            this.skupnaCena = teza.multiply(cena).multiply(davcnaStopnja).setScale(2, RoundingMode.CEILING);
+
+            this.skupniDDV = teza.multiply(cena).multiply(davcnaStopnja).setScale(2, RoundingMode.CEILING).subtract(teza.multiply(cena).setScale(2, RoundingMode.CEILING));
+        }
+        else {
+            this.skupniDDV = BigDecimal.valueOf(kolicina).multiply(cena.multiply(davcnaStopnja.divide(new BigDecimal(10))));
+        }
     }
 
     public BigDecimal getDavcnaStopnja() {
@@ -81,14 +121,24 @@ public class Artikel implements Searchable {
 
     @Override
     public String toString() {
-        return "Artikel{" +
-                "kolicina=" + kolicina +
-                ", ime='" + ime + '\'' +
-                ", cena=" + cena +
-                ", davcnaStopnja=" + davcnaStopnja +
-                ", ean='" + ean + '\'' +
-                ", skupnaCena=" + skupnaCena +
-                '}';
+        if(preveriInterni()){
+            return teza + " kg " +
+                    ime  +
+                    " " + cena + "€ " +
+
+                    "Skupaj+DDV " + skupnaCena + "€ \n";
+
+
+        }
+        else {
+
+            return
+                    kolicina +
+                            "x " + ime +
+                            " " + cena + "€ " +
+
+                            "Skupaj+DDV " + skupnaCena + "€ \n";
+        }
     }
     public boolean search(String niz) {
         int isExists = this.toString().indexOf(niz);
@@ -98,6 +148,19 @@ public class Artikel implements Searchable {
         else{
             return false;
         }
+    }
+
+    public boolean preveriInterni(){
+
+        String b = this.getEan().substring(0,3);
+        for(int i=0; i< 4; i++){
+            if(b.equals(oddelki[i][0])){
+                return true;
+
+            }
+        }
+        return false;
+
     }
 
 

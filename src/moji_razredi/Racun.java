@@ -95,18 +95,26 @@ public class Racun implements Searchable
     }
 
     @Override
+
     public String toString() {
+
+
+        String skupajVse = "";
+        for (int i = 0; i < this.seznamRacun.getSeznamArtiklov().size(); i++) {
+            skupajVse += this.seznamRacun.getSeznamArtiklov().get(i).toString();
+        }
+
         return this.getPodjetjeRacun().getIme() + "\n" +
                 this.getPodjetjeRacun().getNaslov() + "\n" +
                 this.getPodjetjeRacun().getDavcnaStevilka() + "\n" +
                 "RACUN \n" +
                 datum + "\n" +
 
-                "SeznamRacun=" + seznamRacun + "\n" +
-                "ddv=" + skupniDDV + "\n" +
-                "Skupaj z ddv=" + skupnaCena + "\n" +
-                "id=" + id + "\n" +
-                "Blagajnik='" + izdajatelj + '\''
+                "\n"  + skupajVse +"\n" +
+                "ddv:" + skupniDDV + "\n" +
+                "Skupaj z ddv: " + skupnaCena + "\n" +
+                "id: " + id + "\n" +
+                "Blagajnik: '" + izdajatelj + '\''
 
                 ;
     }
