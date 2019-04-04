@@ -49,8 +49,8 @@ public class Artikli implements Searchable, JsonSupport{
     }
 
     public <T> T fromJSON(String json){
-        Gson gson = new Gson(); // Or use new GsonBuilder().create();
-        Artikli target2 = gson.fromJson(json, this.getClass()); // deserializes json into target2
+        Gson gson = new Gson();
+        Artikli target2 = gson.fromJson(json, this.getClass());
         return (T)target2;
     }
 

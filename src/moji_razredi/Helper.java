@@ -1,15 +1,13 @@
 package moji_razredi;
 
-import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.io.IOException;
-import com.google.gson.GsonBuilder;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.charset.StandardCharsets;
+
+import java.util.stream.Stream;
+
 
 public class Helper {
     private String ime;
@@ -18,7 +16,7 @@ public class Helper {
         this.ime = ime;
     }
 
-    public static void pisanje(String json, String imeDatoteke){
+    public static void pisanje(String json, String imeDatoteke) {
         try {
             File file = new File(imeDatoteke);
             FileWriter fileWriter = new FileWriter(file);
@@ -31,34 +29,45 @@ public class Helper {
         }
     }
 
+    public static String branje(String imeDatoteke) throws FileNotFoundException{
+        StringBuilder contentBuilder = new StringBuilder();
 
+        try (Stream<String> stream = Files.lines( Paths.get(imeDatoteke), StandardCharsets.UTF_8))
+        {
+            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
 
+        return contentBuilder.toString();
+    }
 
     public static boolean checkDigit(String preveri) {
         int intArray[] = new int[preveri.length()];
         int vsota = 0;
         for (int i = 0; i < preveri.length(); i++) {
             intArray[i] = Character.digit(preveri.charAt(i), 10);
-            if(i % 2 == 1){
+            if (i % 2 == 1) {
                 intArray[i] = 3 * intArray[i];
             }
-            if(i != preveri.length() -1) {
+            if (i != preveri.length() - 1) {
                 vsota = vsota + intArray[i];
             }
         }
         int zaokrozeno = vsota;
-        int zadnastevilka = intArray[preveri.length()-1];
-        if(vsota % 10 != 0){
+        int zadnastevilka = intArray[preveri.length() - 1];
+        if (vsota % 10 != 0) {
             int a = vsota % 10;
-            int ab =  10 - a;
-            zaokrozeno = vsota +ab;
+            int ab = 10 - a;
+            zaokrozeno = vsota + ab;
 
         }
 
-        if(zadnastevilka == zaokrozeno - vsota) {
+        if (zadnastevilka == zaokrozeno - vsota) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

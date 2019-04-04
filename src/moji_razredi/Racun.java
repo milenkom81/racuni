@@ -114,7 +114,7 @@ public class Racun implements Searchable
 
                 "\n"  + skupajVse +"\n" +
                 "ddv:" + skupniDDV + "\n" +
-                "Skupaj z ddv: " + skupnaCena + "\n" +
+                "Skupaj z ddv: " + skupnaCena.setScale(2, BigDecimal.ROUND_UP) + "\n" +
                 "id: " + id + "\n" +
                 "Blagajnik: '" + izdajatelj + '\''
 
@@ -137,6 +137,7 @@ public class Racun implements Searchable
 
     public void setPopust(Kupon popust) {
         this.popust = popust;
+        kupon();
     }
 
     public void kupon() {
