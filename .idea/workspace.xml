@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="578a6d5e-cfd9-4958-9059-1e6a11861fb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jars/HikariCP-3.3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jars/commons-dbcp2-2.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jars/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jars/commons-pool2-2.5.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jars/gson-2.8.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jars/mysql-connector-java-5.1.47.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jars/slf4j-api-1.7.22.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jars/slf4j-jdk14-1.7.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/si/um/feri/database/DBHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/si/um/feri/database/Naslov.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikli.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Artikli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Companies.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Companies.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Invoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Invoices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/JsonSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/JsonSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Kupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Kupon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Podjetje.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Podjetje.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Racun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Racun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Searchable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vaje1/moji_razredi/Searchable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vaje1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/vaje1.iml" afterDir="false" />
-    </list>
+    <list default="true" id="578a6d5e-cfd9-4958-9059-1e6a11861fb0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,19 +21,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="20">
+              <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="40">
@@ -219,6 +190,11 @@
             </path>
             <path>
               <item name="java-exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -297,7 +273,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="960" height="1055" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28854167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -523,20 +498,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
