@@ -1,7 +1,9 @@
 package si.um.feri.database;
+
 import com.google.gson.Gson;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -9,6 +11,8 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+import moji_razredi.Helper;
+
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,10 +21,10 @@ import java.sql.SQLException;
 
 public class DBHelper {
 
-    public static HikariDataSource connect(String json){
+    public static HikariDataSource connect(String json) {
         HikariConfig config = new HikariConfig();
 
-        Naslov connection =FromJson(json);
+        Naslov connection = FromJson(json);
         //"jdbc:mysql://localhost:3306/sakila"
         config.setJdbcUrl(connection.getUrl());
         config.setUsername(connection.getUsername());
@@ -34,9 +38,9 @@ public class DBHelper {
         return ds;
     }
 
-    public static Naslov FromJson(String json){
+    public static Naslov FromJson(String json) {
         Gson gson = new Gson();
-            Naslov target2 = gson.fromJson(json, Naslov.class);
+        Naslov target2 = gson.fromJson(json, Naslov.class);
         return target2;
 
     }
@@ -45,8 +49,7 @@ public class DBHelper {
         con.setAutoCommit(false);
 
 
-//        String SQL = "INSERT INTO Employees (id, first, last, age) " +
-//                "VALUES(?, ?, ?, ?)";
+        String SQL = "insert into Article values(?,?,?,?,?,?,?,NOW(),NOW())";
 //
 //// Create PrepareStatement object
 //        PreparedStatemen pstmt = conn.prepareStatement(SQL);
@@ -54,26 +57,51 @@ public class DBHelper {
 
 
         PreparedStatement updateemp = con.prepareStatement(
-                "insert into Article values(?,?,?,?,?,?,?,NOW(),NOW())");
-        updateemp.setInt(1,Integer.parseInt(data[0][2000]));
-        updateemp.setString(2,data[1][4000]);
-        updateemp.setString(3, data[5][4000]);
-        updateemp.setInt(4,23);
-        updateemp.setInt(5,22);
-        updateemp.setInt(6, 10);
-        updateemp.setBoolean(7,false);
-        updateemp.executeUpdate();
+                SQL);
+
+            for (int i = 1; i < data[0].length; i++) {
+
+                boolean test = Helper.checkDigit(data[1][i]);
+
+//                if (test == true) {
+//                    System.out.println(data[1][i]);
+//                    System.out.println("Artikel z idjem " + Integer.parseInt(data[0][i]) + " ima napacno kodo");
+//                }
+                if (data[1][i].length() < 14) {
+                    for (int a = 0; a < 14-data[0].length; a++) {
+                        data[1][i] = "0" + data[1][i];
+                    }
+                }
+
+                    updateemp.setInt(1, Integer.parseInt(data[0][i]));
+                    updateemp.setString(2, data[1][i]);
+                    updateemp.setString(3, data[4][i]);
+                    updateemp.setInt(4, (int) (Math.random() * 100 + 1));
+                    updateemp.setInt(5, 10);
+                    updateemp.setInt(6, 1000);
+                    updateemp.setBoolean(7, false);
+
+                    updateemp.addBatch();
+
+
+                int[] count = updateemp.executeBatch();
+
+                if (i % 1000 == 0) {
+                    con.commit();
+                }
+            }
+        con.commit();
     };
 
 
-    public static String[][] read(String inputFile) throws IOException
-    {
+
+
+    public static String[][] read(String inputFile) throws IOException {
         String[][] data = null;
         File inputWorkbook = new File(inputFile);
         Workbook w;
 
-        try
-        {
+        try {
             w = Workbook.getWorkbook(inputWorkbook);
             // Get the first sheet
 
@@ -82,10 +110,8 @@ public class DBHelper {
             data = new String[sheet.getColumns()][sheet.getRows()];
             // Loop over first 10 column and lines
             //     System.out.println(sheet.getColumns() +  " " +sheet.getRows());
-            for (int j = 0; j <sheet.getColumns(); j++)
-            {
-                for (int i = 0; i < sheet.getRows(); i++)
-                {
+            for (int j = 0; j < sheet.getColumns(); j++) {
+                for (int i = 0; i < sheet.getRows(); i++) {
                     Cell cell = sheet.getCell(j, i);
                     data[j][i] = cell.getContents();
                     //  System.out.println(cell.getContents());
@@ -101,15 +127,11 @@ public class DBHelper {
                 }
             } */
 
-        }
-        catch (BiffException e)
-        {
+        } catch (BiffException e) {
             e.printStackTrace();
         }
         return data;
     }
-
-
 
 
 }
