@@ -37,10 +37,10 @@ public class Main {
         HikariDataSource ds = DBHelper.connect(Helper.branje("povezava.json"));
         con = ds.getConnection();
         pst = con.prepareStatement("SELECT * FROM Company");
-        rs = pst.executeQuery();
-        while (rs.next()) {
-            System.out.format("%d %s", rs.getInt(1), rs.getString(2));
-        }
+//        rs = pst.executeQuery();
+//        while (rs.next()) {
+//            System.out.format("%d %s", rs.getInt(1), rs.getString(2));
+//        }
 
 
 
@@ -49,7 +49,7 @@ public class Main {
 
         DBHelper.dodajArtikleDB(eksel,con);
 
-
+//        System.out.println(Helper.checkDigit("35200261232"));
 
 
 

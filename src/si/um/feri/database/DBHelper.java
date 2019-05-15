@@ -61,20 +61,24 @@ public class DBHelper {
 
             for (int i = 1; i < data[0].length; i++) {
 
-                boolean test = Helper.checkDigit(data[1][i]);
 
-//                if (test == true) {
-//                    System.out.println(data[1][i]);
-//                    System.out.println("Artikel z idjem " + Integer.parseInt(data[0][i]) + " ima napacno kodo");
-//                }
-                if (data[1][i].length() < 14) {
-                    for (int a = 0; a < 14-data[0].length; a++) {
-                        data[1][i] = "0" + data[1][i];
+                if (data[2][i].length() < 12) {
+                    for (int a = 0; a < 12-data[0].length; a++) {
+                        data[2][i] = "0" + data[2][i];
                     }
                 }
 
+                boolean test = Helper.checkDigit(data[2][i]);
+
+                if (test == false) {
+                    System.out.println(data[2][i]);
+                    System.out.println("Artikel z idjem " + Integer.parseInt(data[0][i]) + " ima napacno kodo");
+                }
+
+
+                if (test == true) {
                     updateemp.setInt(1, Integer.parseInt(data[0][i]));
-                    updateemp.setString(2, data[1][i]);
+                    updateemp.setString(2, data[2][i]);
                     updateemp.setString(3, data[4][i]);
                     updateemp.setInt(4, (int) (Math.random() * 100 + 1));
                     updateemp.setInt(5, 10);
@@ -82,7 +86,7 @@ public class DBHelper {
                     updateemp.setBoolean(7, false);
 
                     updateemp.addBatch();
-
+                }
 
                 int[] count = updateemp.executeBatch();
 
