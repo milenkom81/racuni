@@ -14,15 +14,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.io.*;
 
-import org.apache.poi.xssf.usermodel.*;
-import org.apache.poi.xssf.streaming.SXSSFRow.CellIterator;
-
-import org.apache.commons.dbcp2.BasicDataSource;
-
-import javax.crypto.spec.DHGenParameterSpec;
 
 public class Main {
 
@@ -37,20 +29,11 @@ public class Main {
         HikariDataSource ds = DBHelper.connect(Helper.branje("povezava.json"));
         con = ds.getConnection();
         pst = con.prepareStatement("SELECT * FROM Company");
-//        rs = pst.executeQuery();
-//        while (rs.next()) {
-//            System.out.format("%d %s", rs.getInt(1), rs.getString(2));
-//        }
-
-
 
 
         String[][] eksel = DBHelper.read("Grocery_UPC_Database.xls");
-
-        DBHelper.dodajArtikleDB(eksel,con);
-
-//        System.out.println(Helper.checkDigit("35200261232"));
-
+        DBHelper.dodajArtikleDB(eksel, con);
+//       DBHelper.readTXTFile("/home/jasak/Downloads/en.openfoodfacts.org.products.csv",con);
 
 
 //        PreparedStatement updateemp = con.prepareStatement(

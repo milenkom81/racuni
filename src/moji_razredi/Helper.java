@@ -47,12 +47,20 @@ public class Helper {
     public static boolean checkDigit(String preveri) {
         int intArray[] = new int[preveri.length()];
         int vsota = 0;
+
+
+
         for (int i = 0; i < preveri.length(); i++) {
-            intArray[i] = Character.digit(preveri.charAt(i), 10);
-            if (i % 2 == 1) {
+            intArray[i] = Character.digit(preveri.charAt(i), preveri.length());
+            if (i % 2 == 0 && preveri.length() %2 ==0) {
                 intArray[i] = 3 * intArray[i];
             }
-            if (i != preveri.length() - 1) {
+
+            if (i % 2 == 1 && preveri.length() %2 ==1) {
+                intArray[i] = 3 * intArray[i];
+            }
+
+            if (i != preveri.length() -1) {
                 vsota = vsota + intArray[i];
             }
         }

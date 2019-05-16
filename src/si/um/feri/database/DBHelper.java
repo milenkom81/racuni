@@ -3,7 +3,7 @@ package si.um.feri.database;
 import com.google.gson.Gson;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-
+import java.util.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -12,11 +12,11 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 import moji_razredi.Helper;
-
-import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
+import java.io.*;
 
 
 public class DBHelper {
@@ -76,7 +76,7 @@ public class DBHelper {
                 }
 
 
-                if (test == true) {
+                if(test == true) {
                     updateemp.setInt(1, Integer.parseInt(data[0][i]));
                     updateemp.setString(2, data[2][i]);
                     updateemp.setString(3, data[4][i]);
@@ -87,7 +87,6 @@ public class DBHelper {
 
                     updateemp.addBatch();
                 }
-
                 int[] count = updateemp.executeBatch();
 
                 if (i % 1000 == 0) {
@@ -100,7 +99,7 @@ public class DBHelper {
 
 
 
-    public static String[][] read(String inputFile) throws IOException {
+    public static String[][] read(String inputFile) throws IOException  {
         String[][] data = null;
         File inputWorkbook = new File(inputFile);
         Workbook w;
@@ -108,8 +107,6 @@ public class DBHelper {
         try {
             w = Workbook.getWorkbook(inputWorkbook);
             // Get the first sheet
-
-
             Sheet sheet = w.getSheet(0);
             data = new String[sheet.getColumns()][sheet.getRows()];
             // Loop over first 10 column and lines
@@ -136,6 +133,67 @@ public class DBHelper {
         }
         return data;
     }
+
+    public static List<List<String>> readTXTFile(String csvFileName,Connection con) throws IOException, SQLException {
+
+        con.setAutoCommit(false);
+        String SQL = "insert into Article values(?,?,?,?,?,?,?,NOW(),NOW())";
+        PreparedStatement updateemp = con.prepareStatement(
+                SQL);
+
+        String line = null;
+        BufferedReader stream = null;
+        List<List<String>> csvData = new ArrayList<List<String>>();
+        List<String> tmp;
+        try {
+            stream = new BufferedReader(new FileReader(csvFileName));
+            boolean flag = false;
+            int i = 0;
+            while ((line = stream.readLine()) != null) {
+                String[] vrstica = line.split("\\s+");
+                boolean test = Helper.checkDigit(vrstica[0]);
+
+                if (test == false) {
+                    System.out.println("Artikel z idjem " + vrstica[0] + " ima napacno kodo");
+                }
+                if (vrstica[0].length() < 13) {
+                    for (int a = 0; a < 12-vrstica[0].length(); a++) {
+                        vrstica[0] = "0" + vrstica[0];
+                    }
+                }
+
+
+
+                if(flag == false && test ==true) {
+                    flag = true;
+                    updateemp.setInt(1, Integer.parseInt(vrstica[0]));
+                    updateemp.setString(2, vrstica[0]);
+                    updateemp.setString(3, vrstica[1]);
+                    updateemp.setInt(4, (int) (Math.random() * 100 + 1));
+                    updateemp.setInt(5, 10);
+                    updateemp.setInt(6, 1000);
+                    updateemp.setBoolean(7, false);
+
+                    updateemp.addBatch();
+
+                    int[] count = updateemp.executeBatch();
+                    i++;
+                    if (i % 1000 == 0) {
+                        con.commit();
+                    }
+                }
+                con.commit();
+            }
+        } finally {
+            if (stream != null)
+                stream.close();
+        }
+
+        return csvData;
+
+    }
+
+
 
 
 }
