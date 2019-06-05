@@ -22,13 +22,21 @@ import java.io.*;
 public class DBHelper {
 
     public static Connection con;
-
+    public static HikariDataSource h;
     public Connection getCon() {
         return con;
     }
 
     public void setCon(Connection con) {
         this.con = con;
+    }
+
+    public static HikariDataSource getH() {
+        return h;
+    }
+
+    public static void setH(HikariDataSource h) {
+        DBHelper.h = h;
     }
 
     public static HikariDataSource connect(String json) throws SQLException {
@@ -45,6 +53,7 @@ public class DBHelper {
 
         HikariDataSource ds = new HikariDataSource(config);
         con = ds.getConnection();
+        h=ds;
         return ds;
     }
 

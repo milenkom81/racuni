@@ -1,13 +1,24 @@
 package moji_razredi;
 
 public class Podjetje implements Searchable {
+    private int id;
     private String ime;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private Boolean davcniZavezanec;
     private String davcnaStevilka;
     private String maticnaStevilka;
     private String naslov;
 
-    public Podjetje(String Ime, Boolean DavcniZavezanec, String DavcnaStevilka, String MaticnaStevilka, String Naslov) {
+    public Podjetje(int Id, String Ime, Boolean DavcniZavezanec, String DavcnaStevilka, String MaticnaStevilka, String Naslov) {
+        id = Id;
         ime = Ime;
         davcniZavezanec = DavcniZavezanec;
         davcnaStevilka = DavcnaStevilka;

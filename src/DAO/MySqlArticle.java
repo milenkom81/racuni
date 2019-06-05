@@ -23,9 +23,28 @@ public class MySqlArticle implements ArticleDao {
     final String SQL_UPDATE = " UPDATE Article SET name = ? , price = ? , vat = ? , stock = ? WHERE barcode = ? ";
     final String SQL_DELETE = "DELETE FROM " + TABLE_NAME + " WHERE barcode = ? LIMIT 1";
 
+    public List<Artikel> getAll(List<Artikel> lista) {
+
+        try (Connection conn = DBHelper.getH().getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQL_GET_ALL)) {
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Artikel temp = extractFromResultSet(rs);
+                lista.add(temp);
+            }
+        return lista;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
     @Override
     public Artikel getByBarcode(String code) {
-        try (Connection conn = DBHelper.con;
+        try (Connection conn = DBHelper.getH().getConnection();
              PreparedStatement ps = conn.prepareStatement(SQL_GET_BY_CODE)) {
             ps.setString(1, code);
             ResultSet rs = ps.executeQuery();
@@ -41,7 +60,7 @@ public class MySqlArticle implements ArticleDao {
 
     @Override
     public boolean insert(Artikel ar) throws SQLException {
-        try (Connection conn = DBHelper.con;
+        try (Connection conn = DBHelper.getH().getConnection();
              PreparedStatement updateemp = conn.prepareStatement(SQL_INSERT)) {
             updateemp.setInt(1, 400000);
             updateemp.setString(2, ar.getEan());
@@ -52,7 +71,7 @@ public class MySqlArticle implements ArticleDao {
             updateemp.setBoolean(7, false);
             boolean rs = updateemp.execute();
 
-            if (rs==true)
+            if (rs == true)
                 return true;
 
         } catch (SQLException e) {
@@ -62,10 +81,9 @@ public class MySqlArticle implements ArticleDao {
     }
 
 
-
     @Override
     public boolean update(Artikel ar) {
-        try (Connection conn = DBHelper.con;
+        try (Connection conn = DBHelper.getH().getConnection();
              PreparedStatement ps = conn.prepareStatement(SQL_UPDATE)) {
 
             ;
@@ -84,7 +102,7 @@ public class MySqlArticle implements ArticleDao {
 
     @Override
     public boolean delete(Artikel a) {
-        try (Connection conn = DBHelper.con;
+        try (Connection conn = DBHelper.getH().getConnection();
              PreparedStatement ps = conn.prepareStatement(SQL_DELETE)) {
 
             ps.setString(1, a.getEan()); // article_id BINARY(16) NOT NULL
