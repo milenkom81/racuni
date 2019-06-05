@@ -21,7 +21,17 @@ import java.io.*;
 
 public class DBHelper {
 
-    public static HikariDataSource connect(String json) {
+    public static Connection con;
+
+    public Connection getCon() {
+        return con;
+    }
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
+
+    public static HikariDataSource connect(String json) throws SQLException {
         HikariConfig config = new HikariConfig();
 
         Naslov connection = FromJson(json);
@@ -34,7 +44,7 @@ public class DBHelper {
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
         HikariDataSource ds = new HikariDataSource(config);
-
+        con = ds.getConnection();
         return ds;
     }
 
@@ -134,18 +144,17 @@ public class DBHelper {
         return data;
     }
 
-    public static List<List<String>> readTXTFile(String csvFileName,Connection con) throws IOException, SQLException {
+    public static List<List<String>> readCSVFile(String csvFileName,Connection con) throws IOException, SQLException {
 
         con.setAutoCommit(false);
         String SQL = "insert into Article values(?,?,?,?,?,?,?,NOW(),NOW())";
-        PreparedStatement updateemp = con.prepareStatement(
-                SQL);
+
 
         String line = null;
         BufferedReader stream = null;
         List<List<String>> csvData = new ArrayList<List<String>>();
         List<String> tmp;
-        try {
+        try (PreparedStatement updateemp = con.prepareStatement(SQL);){
             stream = new BufferedReader(new FileReader(csvFileName));
             boolean flag = false;
             int i = 0;

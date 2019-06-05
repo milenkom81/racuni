@@ -1,3 +1,6 @@
+import DAO.ArticleDao;
+import DAO.DaoCrud;
+import DAO.MySqlArticle;
 import moji_razredi.*;
 import si.um.feri.database.*;
 
@@ -18,8 +21,9 @@ import java.sql.ResultSet;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException, SQLException, IOException {
+    public static void main(String[] args) throws SQLException, IOException {
 
+        Artikel voda = new Artikel("voda", new BigDecimal("1"), new BigDecimal("1.2"), 10, "1234567891");
 
         Connection con = null;
         PreparedStatement pst = null;
@@ -28,24 +32,18 @@ public class Main {
 
         HikariDataSource ds = DBHelper.connect(Helper.branje("povezava.json"));
         con = ds.getConnection();
-        pst = con.prepareStatement("SELECT * FROM Company");
+//        pst = con.prepareStatement("SELECT * FROM Company");
+//
+//
+//        String[][] eksel = DBHelper.read("Grocery_UPC_Database.xls");
+//        DBHelper.dodajArtikleDB(eksel, con);
 
 
-        String[][] eksel = DBHelper.read("Grocery_UPC_Database.xls");
-        DBHelper.dodajArtikleDB(eksel, con);
-//       DBHelper.readTXTFile("/home/jasak/Downloads/en.openfoodfacts.org.products.csv",con);
+        MySqlArticle s = new MySqlArticle();
+//        Artikel NOVI = s.getByBarcode("035200264013");
 
+        s.update(voda);
 
-//        PreparedStatement updateemp = con.prepareStatement(
-//                "insert into Article values(?,?,?,?,?,?,?,NOW(),NOW())");
-//        updateemp.setInt(1,Integer.parseInt(eksel[0][4000]));
-//        updateemp.setString(2,eksel[1][4000]);
-//        updateemp.setString(3, eksel[2][4000]);
-//        updateemp.setInt(4,23);
-//        updateemp.setInt(5,22);
-//        updateemp.setInt(6, 10);
-//        updateemp.setBoolean(7,false);
-//        updateemp.executeUpdate();
 
     }
 }
